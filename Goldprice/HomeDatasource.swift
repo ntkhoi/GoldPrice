@@ -7,16 +7,18 @@
 //
 
 import Foundation
+import TRON
+import SwiftyJSON
 
-class HomeDatasource : Datasource{
-    let goldPrices: [GoldPrice] = {
-        let gold1 = GoldPrice(amount: 20, date: "10/07/2016")
-        let gold2 = GoldPrice(amount: 21, date: "11/07/2016")
-        let gold3 = GoldPrice(amount: 16, date: "12/07/2016")
-        let gold4 = GoldPrice(amount: 30, date: "13/07/2016")
+class HomeDatasource : Datasource, JSONDecodable{
         
-        return [gold1, gold2, gold3, gold4]
-    }()
+    let goldPrices: [GoldPrice]
+    required init(json: JSON) throws {
+        guard let goldPriceJsonArray = json.array else{
+            throw NSError(domain: "goldprice", code: 1, userInfo: [NSLocalizedDescriptionKey: "Parsing JSON was not valid."])
+        }
+        self.goldPrices = goldPriceJsonArray.map{GoldPrice(json: $0)}
+    }
     
     override func cellClasses() -> [DatasourceCell.Type] {
         return [GoldPriceCell.self]
@@ -29,7 +31,6 @@ class HomeDatasource : Datasource{
     override func numberOfItems(_ section: Int) -> Int {
         return goldPrices.count
     }
-
 }
 
 

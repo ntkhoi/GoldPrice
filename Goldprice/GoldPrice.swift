@@ -7,8 +7,15 @@
 //
 
 import Foundation
-
-struct GoldPrice {
+import SwiftyJSON
+import TRON
+struct GoldPrice :JSONDecodable {
     let amount: Float
     let date: String
+    init(json: JSON) {
+        self.amount = json["amount"].floatValue
+        self.date = json["date"].stringValue
+    }
 }
+
+

@@ -30,6 +30,11 @@
 		2035CF7E1EED4A4C00114A09 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF7D1EED4A4C00114A09 /* HomeDatasource.swift */; };
 		2035CF811EED4D7600114A09 /* GoldPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF801EED4D7600114A09 /* GoldPrice.swift */; };
 		2035CF831EED512000114A09 /* GoldPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF821EED512000114A09 /* GoldPriceCell.swift */; };
+		2035CF861EED743F00114A09 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF851EED743F00114A09 /* Service.swift */; };
+		2035CF881EED748D00114A09 /* Networkconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF871EED748D00114A09 /* Networkconfig.swift */; };
+		2035CF8A1EED774B00114A09 /* Collection+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF891EED774B00114A09 /* Collection+helper.swift */; };
+		2035CF8C1EED7FAF00114A09 /* DatetimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF8B1EED7FAF00114A09 /* DatetimeHelper.swift */; };
+		2035CF8F1EEDB42200114A09 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF8E1EEDB42200114A09 /* LineChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,11 @@
 		2035CF7D1EED4A4C00114A09 /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
 		2035CF801EED4D7600114A09 /* GoldPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldPrice.swift; sourceTree = "<group>"; };
 		2035CF821EED512000114A09 /* GoldPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldPriceCell.swift; sourceTree = "<group>"; };
+		2035CF851EED743F00114A09 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2035CF871EED748D00114A09 /* Networkconfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkconfig.swift; sourceTree = "<group>"; };
+		2035CF891EED774B00114A09 /* Collection+helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+helper.swift"; sourceTree = "<group>"; };
+		2035CF8B1EED7FAF00114A09 /* DatetimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatetimeHelper.swift; sourceTree = "<group>"; };
+		2035CF8E1EEDB42200114A09 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		42857657B5F17B3479A258B3 /* Pods-Goldprice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldprice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Goldprice/Pods-Goldprice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +114,7 @@
 		2033AF511EED248C00984A28 /* Goldprice */ = {
 			isa = PBXGroup;
 			children = (
+				2035CF841EED743100114A09 /* service */,
 				2035CF7F1EED4A7300114A09 /* view */,
 				2035CF7C1EED4A2700114A09 /* model */,
 				2035CF771EED3EA800114A09 /* Utility */,
@@ -148,7 +159,11 @@
 		2035CF771EED3EA800114A09 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				2035CF8E1EEDB42200114A09 /* LineChart.swift */,
 				2035CF7A1EED48ED00114A09 /* UIColor+helper.swift */,
+				2035CF871EED748D00114A09 /* Networkconfig.swift */,
+				2035CF891EED774B00114A09 /* Collection+helper.swift */,
+				2035CF8B1EED7FAF00114A09 /* DatetimeHelper.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -168,6 +183,14 @@
 				2035CF821EED512000114A09 /* GoldPriceCell.swift */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		2035CF841EED743100114A09 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				2035CF851EED743F00114A09 /* Service.swift */,
+			);
+			name = service;
 			sourceTree = "<group>";
 		};
 		470777ACBDC44FB6D1A4047B /* Frameworks */ = {
@@ -313,13 +336,18 @@
 				2035CF681EED327500114A09 /* Datasource.swift in Sources */,
 				2035CF6A1EED327500114A09 /* DatasourceController.swift in Sources */,
 				2035CF721EED327500114A09 /* UIImage+Helper.swift in Sources */,
+				2035CF8C1EED7FAF00114A09 /* DatetimeHelper.swift in Sources */,
 				2035CF811EED4D7600114A09 /* GoldPrice.swift in Sources */,
 				2035CF6E1EED327500114A09 /* LBTATextView.swift in Sources */,
 				2035CF6B1EED327500114A09 /* DefaultCells.swift in Sources */,
 				2035CF701EED327500114A09 /* UIButton+Helper.swift in Sources */,
 				2035CF671EED327500114A09 /* CachedImageView.swift in Sources */,
+				2035CF8A1EED774B00114A09 /* Collection+helper.swift in Sources */,
 				2035CF761EED3D8100114A09 /* HomeDatasourceController+navbar.swift in Sources */,
+				2035CF881EED748D00114A09 /* Networkconfig.swift in Sources */,
 				2033AF531EED248C00984A28 /* AppDelegate.swift in Sources */,
+				2035CF8F1EEDB42200114A09 /* LineChart.swift in Sources */,
+				2035CF861EED743F00114A09 /* Service.swift in Sources */,
 				2035CF6D1EED327500114A09 /* LBTALabel.swift in Sources */,
 				2035CF7E1EED4A4C00114A09 /* HomeDatasource.swift in Sources */,
 			);

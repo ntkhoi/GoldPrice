@@ -21,11 +21,11 @@ extension UIColor {
     }
     
 }
-
+enum AppConfig {
+    static let fontName: String = "Myriad Pro"
+}
 
 enum AppColor{
-    
-    //Color scheme: #0F85D1, #DCF2FF, #9DCDEC, #FFFFFF.
     static let NavTitle = UIColor(r: 15, g: 133, b: 209)
     static let collectionViewBg = UIColor(r: 220, g: 242, b: 255)
     static let NavBorder = UIColor(r: 157, g: 205, b: 236)

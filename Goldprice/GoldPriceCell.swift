@@ -27,7 +27,7 @@ class GoldPriceCell: DatasourceCell{
         return label
     }()
     
-    let dateLabel: UILabel = {
+    private let dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.NavTitle
         label.textAlignment = .left
@@ -36,7 +36,7 @@ class GoldPriceCell: DatasourceCell{
         return label
     }()
     
-    let separatorView: UIView = {
+    private let separatorView: UIView = {
         let uiview = UIView()
         uiview.backgroundColor = AppColor.NavTitle
         
