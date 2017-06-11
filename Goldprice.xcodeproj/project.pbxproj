@@ -9,10 +9,27 @@
 /* Begin PBXBuildFile section */
 		198FB781721EE1EC28FF743C /* Pods_Goldprice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF14319F54BCE60578963B6 /* Pods_Goldprice.framework */; };
 		2033AF531EED248C00984A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033AF521EED248C00984A28 /* AppDelegate.swift */; };
-		2033AF551EED248C00984A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033AF541EED248C00984A28 /* ViewController.swift */; };
 		2033AF581EED248C00984A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2033AF561EED248C00984A28 /* Main.storyboard */; };
 		2033AF5A1EED248C00984A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2033AF591EED248C00984A28 /* Assets.xcassets */; };
 		2033AF5D1EED248C00984A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2033AF5B1EED248C00984A28 /* LaunchScreen.storyboard */; };
+		2035CF351EED2D8E00114A09 /* HomeDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF341EED2D8E00114A09 /* HomeDatasourceController.swift */; };
+		2035CF671EED327500114A09 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF5A1EED327500114A09 /* CachedImageView.swift */; };
+		2035CF681EED327500114A09 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF5B1EED327500114A09 /* Datasource.swift */; };
+		2035CF691EED327500114A09 /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF5C1EED327500114A09 /* DatasourceCell.swift */; };
+		2035CF6A1EED327500114A09 /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF5D1EED327500114A09 /* DatasourceController.swift */; };
+		2035CF6B1EED327500114A09 /* DefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF5E1EED327500114A09 /* DefaultCells.swift */; };
+		2035CF6C1EED327500114A09 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF5F1EED327500114A09 /* DiscardableImageCacheItem.swift */; };
+		2035CF6D1EED327500114A09 /* LBTALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF601EED327500114A09 /* LBTALabel.swift */; };
+		2035CF6E1EED327500114A09 /* LBTATextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF611EED327500114A09 /* LBTATextView.swift */; };
+		2035CF6F1EED327500114A09 /* NSMutableAttributedString+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF621EED327500114A09 /* NSMutableAttributedString+Helper.swift */; };
+		2035CF701EED327500114A09 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF631EED327500114A09 /* UIButton+Helper.swift */; };
+		2035CF721EED327500114A09 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF651EED327500114A09 /* UIImage+Helper.swift */; };
+		2035CF731EED327500114A09 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF661EED327500114A09 /* UIView+Anchors.swift */; };
+		2035CF761EED3D8100114A09 /* HomeDatasourceController+navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF751EED3D8100114A09 /* HomeDatasourceController+navbar.swift */; };
+		2035CF7B1EED48ED00114A09 /* UIColor+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF7A1EED48ED00114A09 /* UIColor+helper.swift */; };
+		2035CF7E1EED4A4C00114A09 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF7D1EED4A4C00114A09 /* HomeDatasource.swift */; };
+		2035CF811EED4D7600114A09 /* GoldPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF801EED4D7600114A09 /* GoldPrice.swift */; };
+		2035CF831EED512000114A09 /* GoldPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF821EED512000114A09 /* GoldPriceCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +37,28 @@
 		1FCAECC111C43ADB474388F9 /* Pods-Goldprice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldprice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Goldprice/Pods-Goldprice.debug.xcconfig"; sourceTree = "<group>"; };
 		2033AF4F1EED248C00984A28 /* Goldprice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldprice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2033AF521EED248C00984A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2033AF541EED248C00984A28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2033AF571EED248C00984A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2033AF591EED248C00984A28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2033AF5C1EED248C00984A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2033AF5E1EED248C00984A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2035CF341EED2D8E00114A09 /* HomeDatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasourceController.swift; sourceTree = "<group>"; };
+		2035CF5A1EED327500114A09 /* CachedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CachedImageView.swift; path = Goldprice/LBTAComponents/CachedImageView.swift; sourceTree = "<group>"; };
+		2035CF5B1EED327500114A09 /* Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Datasource.swift; path = Goldprice/LBTAComponents/Datasource.swift; sourceTree = "<group>"; };
+		2035CF5C1EED327500114A09 /* DatasourceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatasourceCell.swift; path = Goldprice/LBTAComponents/DatasourceCell.swift; sourceTree = "<group>"; };
+		2035CF5D1EED327500114A09 /* DatasourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatasourceController.swift; path = Goldprice/LBTAComponents/DatasourceController.swift; sourceTree = "<group>"; };
+		2035CF5E1EED327500114A09 /* DefaultCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultCells.swift; path = Goldprice/LBTAComponents/DefaultCells.swift; sourceTree = "<group>"; };
+		2035CF5F1EED327500114A09 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscardableImageCacheItem.swift; path = Goldprice/LBTAComponents/DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		2035CF601EED327500114A09 /* LBTALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LBTALabel.swift; path = Goldprice/LBTAComponents/LBTALabel.swift; sourceTree = "<group>"; };
+		2035CF611EED327500114A09 /* LBTATextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LBTATextView.swift; path = Goldprice/LBTAComponents/LBTATextView.swift; sourceTree = "<group>"; };
+		2035CF621EED327500114A09 /* NSMutableAttributedString+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+Helper.swift"; path = "Goldprice/LBTAComponents/NSMutableAttributedString+Helper.swift"; sourceTree = "<group>"; };
+		2035CF631EED327500114A09 /* UIButton+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Helper.swift"; path = "Goldprice/LBTAComponents/UIButton+Helper.swift"; sourceTree = "<group>"; };
+		2035CF651EED327500114A09 /* UIImage+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Helper.swift"; path = "Goldprice/LBTAComponents/UIImage+Helper.swift"; sourceTree = "<group>"; };
+		2035CF661EED327500114A09 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Anchors.swift"; path = "Goldprice/LBTAComponents/UIView+Anchors.swift"; sourceTree = "<group>"; };
+		2035CF751EED3D8100114A09 /* HomeDatasourceController+navbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeDatasourceController+navbar.swift"; sourceTree = "<group>"; };
+		2035CF7A1EED48ED00114A09 /* UIColor+helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+helper.swift"; sourceTree = "<group>"; };
+		2035CF7D1EED4A4C00114A09 /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
+		2035CF801EED4D7600114A09 /* GoldPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldPrice.swift; sourceTree = "<group>"; };
+		2035CF821EED512000114A09 /* GoldPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoldPriceCell.swift; sourceTree = "<group>"; };
 		42857657B5F17B3479A258B3 /* Pods-Goldprice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldprice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Goldprice/Pods-Goldprice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,8 +104,11 @@
 		2033AF511EED248C00984A28 /* Goldprice */ = {
 			isa = PBXGroup;
 			children = (
+				2035CF7F1EED4A7300114A09 /* view */,
+				2035CF7C1EED4A2700114A09 /* model */,
+				2035CF771EED3EA800114A09 /* Utility */,
+				2035CF741EED355500114A09 /* controller */,
 				2033AF521EED248C00984A28 /* AppDelegate.swift */,
-				2033AF541EED248C00984A28 /* ViewController.swift */,
 				2033AF561EED248C00984A28 /* Main.storyboard */,
 				2033AF591EED248C00984A28 /* Assets.xcassets */,
 				2033AF5B1EED248C00984A28 /* LaunchScreen.storyboard */,
@@ -80,9 +117,63 @@
 			path = Goldprice;
 			sourceTree = "<group>";
 		};
+		2035CF591EED325E00114A09 /* LBTAComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2035CF5A1EED327500114A09 /* CachedImageView.swift */,
+				2035CF5B1EED327500114A09 /* Datasource.swift */,
+				2035CF5C1EED327500114A09 /* DatasourceCell.swift */,
+				2035CF5D1EED327500114A09 /* DatasourceController.swift */,
+				2035CF5E1EED327500114A09 /* DefaultCells.swift */,
+				2035CF5F1EED327500114A09 /* DiscardableImageCacheItem.swift */,
+				2035CF601EED327500114A09 /* LBTALabel.swift */,
+				2035CF611EED327500114A09 /* LBTATextView.swift */,
+				2035CF621EED327500114A09 /* NSMutableAttributedString+Helper.swift */,
+				2035CF631EED327500114A09 /* UIButton+Helper.swift */,
+				2035CF651EED327500114A09 /* UIImage+Helper.swift */,
+				2035CF661EED327500114A09 /* UIView+Anchors.swift */,
+			);
+			name = LBTAComponents;
+			sourceTree = "<group>";
+		};
+		2035CF741EED355500114A09 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2035CF341EED2D8E00114A09 /* HomeDatasourceController.swift */,
+				2035CF751EED3D8100114A09 /* HomeDatasourceController+navbar.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		2035CF771EED3EA800114A09 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2035CF7A1EED48ED00114A09 /* UIColor+helper.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		2035CF7C1EED4A2700114A09 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2035CF7D1EED4A4C00114A09 /* HomeDatasource.swift */,
+				2035CF801EED4D7600114A09 /* GoldPrice.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		2035CF7F1EED4A7300114A09 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2035CF821EED512000114A09 /* GoldPriceCell.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		470777ACBDC44FB6D1A4047B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2035CF591EED325E00114A09 /* LBTAComponents */,
 				0DF14319F54BCE60578963B6 /* Pods_Goldprice.framework */,
 			);
 			name = Frameworks;
@@ -212,8 +303,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2033AF551EED248C00984A28 /* ViewController.swift in Sources */,
+				2035CF731EED327500114A09 /* UIView+Anchors.swift in Sources */,
+				2035CF351EED2D8E00114A09 /* HomeDatasourceController.swift in Sources */,
+				2035CF6F1EED327500114A09 /* NSMutableAttributedString+Helper.swift in Sources */,
+				2035CF7B1EED48ED00114A09 /* UIColor+helper.swift in Sources */,
+				2035CF831EED512000114A09 /* GoldPriceCell.swift in Sources */,
+				2035CF6C1EED327500114A09 /* DiscardableImageCacheItem.swift in Sources */,
+				2035CF691EED327500114A09 /* DatasourceCell.swift in Sources */,
+				2035CF681EED327500114A09 /* Datasource.swift in Sources */,
+				2035CF6A1EED327500114A09 /* DatasourceController.swift in Sources */,
+				2035CF721EED327500114A09 /* UIImage+Helper.swift in Sources */,
+				2035CF811EED4D7600114A09 /* GoldPrice.swift in Sources */,
+				2035CF6E1EED327500114A09 /* LBTATextView.swift in Sources */,
+				2035CF6B1EED327500114A09 /* DefaultCells.swift in Sources */,
+				2035CF701EED327500114A09 /* UIButton+Helper.swift in Sources */,
+				2035CF671EED327500114A09 /* CachedImageView.swift in Sources */,
+				2035CF761EED3D8100114A09 /* HomeDatasourceController+navbar.swift in Sources */,
 				2033AF531EED248C00984A28 /* AppDelegate.swift in Sources */,
+				2035CF6D1EED327500114A09 /* LBTALabel.swift in Sources */,
+				2035CF7E1EED4A4C00114A09 /* HomeDatasource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 87E55Q9ME9;
 				INFOPLIST_FILE = Goldprice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.khoint.goldprice.Goldprice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 87E55Q9ME9;
 				INFOPLIST_FILE = Goldprice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.khoint.goldprice.Goldprice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +491,7 @@
 				2033AF631EED248C00984A28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

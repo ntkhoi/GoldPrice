@@ -59,7 +59,11 @@ class DefaultCell: DatasourceCell {
     override func setupViews() {
         super.setupViews()
         addSubview(label)
-        label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 0)
+        if #available(iOS 9.0, *) {
+            label.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 0)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
 }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '76A935F71133EFEC6889E64F0DA4549F'
+               BlueprintIdentifier = 'B91AACF17CECA7C7CEE1EDF68B9810E4'
                BlueprintName = 'TRON'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'TRON.framework'>

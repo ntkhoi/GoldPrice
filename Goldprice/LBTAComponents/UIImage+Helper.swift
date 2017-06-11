@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIImage {
     public static func getWindowImage() -> UIImage? {
