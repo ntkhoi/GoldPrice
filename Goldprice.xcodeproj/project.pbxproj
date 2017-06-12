@@ -35,6 +35,9 @@
 		2035CF8A1EED774B00114A09 /* Collection+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF891EED774B00114A09 /* Collection+helper.swift */; };
 		2035CF8C1EED7FAF00114A09 /* DatetimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF8B1EED7FAF00114A09 /* DatetimeHelper.swift */; };
 		2035CF8F1EEDB42200114A09 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035CF8E1EEDB42200114A09 /* LineChart.swift */; };
+		20C2EA5E1EEE10F800281D2D /* InfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EA5D1EEE10F800281D2D /* InfoPopupViewController.swift */; };
+		20C2EA601EEE1A7F00281D2D /* PopupInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C2EA5F1EEE1A7F00281D2D /* PopupInfoView.swift */; };
+		20C72D251EEEDCF600BC5D69 /* HomeDatasourceController+constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C72D241EEEDCF600BC5D69 /* HomeDatasourceController+constraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		2035CF891EED774B00114A09 /* Collection+helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+helper.swift"; sourceTree = "<group>"; };
 		2035CF8B1EED7FAF00114A09 /* DatetimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatetimeHelper.swift; sourceTree = "<group>"; };
 		2035CF8E1EEDB42200114A09 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		20C2EA5D1EEE10F800281D2D /* InfoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPopupViewController.swift; sourceTree = "<group>"; };
+		20C2EA5F1EEE1A7F00281D2D /* PopupInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupInfoView.swift; sourceTree = "<group>"; };
+		20C72D241EEEDCF600BC5D69 /* HomeDatasourceController+constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeDatasourceController+constraint.swift"; sourceTree = "<group>"; };
 		42857657B5F17B3479A258B3 /* Pods-Goldprice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldprice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Goldprice/Pods-Goldprice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +158,8 @@
 			children = (
 				2035CF341EED2D8E00114A09 /* HomeDatasourceController.swift */,
 				2035CF751EED3D8100114A09 /* HomeDatasourceController+navbar.swift */,
+				20C2EA5D1EEE10F800281D2D /* InfoPopupViewController.swift */,
+				20C72D241EEEDCF600BC5D69 /* HomeDatasourceController+constraint.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 		2035CF7F1EED4A7300114A09 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				20C2EA5F1EEE1A7F00281D2D /* PopupInfoView.swift */,
 				2035CF821EED512000114A09 /* GoldPriceCell.swift */,
 			);
 			name = view;
@@ -329,6 +338,8 @@
 				2035CF731EED327500114A09 /* UIView+Anchors.swift in Sources */,
 				2035CF351EED2D8E00114A09 /* HomeDatasourceController.swift in Sources */,
 				2035CF6F1EED327500114A09 /* NSMutableAttributedString+Helper.swift in Sources */,
+				20C2EA5E1EEE10F800281D2D /* InfoPopupViewController.swift in Sources */,
+				20C72D251EEEDCF600BC5D69 /* HomeDatasourceController+constraint.swift in Sources */,
 				2035CF7B1EED48ED00114A09 /* UIColor+helper.swift in Sources */,
 				2035CF831EED512000114A09 /* GoldPriceCell.swift in Sources */,
 				2035CF6C1EED327500114A09 /* DiscardableImageCacheItem.swift in Sources */,
@@ -350,6 +361,7 @@
 				2035CF861EED743F00114A09 /* Service.swift in Sources */,
 				2035CF6D1EED327500114A09 /* LBTALabel.swift in Sources */,
 				2035CF7E1EED4A4C00114A09 /* HomeDatasource.swift in Sources */,
+				20C2EA601EEE1A7F00281D2D /* PopupInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

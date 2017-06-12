@@ -110,6 +110,9 @@ open class LineChart: UIView {
     }
     fileprivate var drawingWidth: CGFloat = 0 {
         didSet {
+            if(dataStore.count == 0){
+                return
+            }
             let data = dataStore[0]
             x.linear = LinearScale(domain: [0.0, CGFloat(data.count - 1)], range: [0, drawingWidth])
             x.scale = x.linear.scale()

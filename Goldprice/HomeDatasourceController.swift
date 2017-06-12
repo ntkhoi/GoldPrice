@@ -8,6 +8,8 @@
 
 
 import UIKit
+import PopupDialog
+
 
 
 class HomeDatasourceController: DatasourceController{
@@ -18,14 +20,14 @@ class HomeDatasourceController: DatasourceController{
         return view
     }()
     
-    fileprivate let dayLabel: UILabel = {
+    let dayLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 40)
         label.text = "12"
         label.textColor = AppColor.NavTitle
         return label
     }()
-    fileprivate let weekDayLabel: UILabel = {
+    var weekDayLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .boldSystemFont(ofSize: 15)
@@ -34,7 +36,7 @@ class HomeDatasourceController: DatasourceController{
         return label
     }()
     
-    fileprivate let monthLabel: UILabel = {
+    let monthLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 13)
@@ -43,7 +45,7 @@ class HomeDatasourceController: DatasourceController{
         return label
     }()
     
-    fileprivate let yearLabel: UILabel = {
+    let yearLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 13)
@@ -51,55 +53,57 @@ class HomeDatasourceController: DatasourceController{
         label.textColor = AppColor.NavTitle
         return label
     }()
-
+    
+    var currentDate: [TimeUnit: String] = [:]
+    
     var lineChart: LineChart!
+    //Defaul data for linechar
+    var goldAmouts: [CGFloat] = [0,0,0,0]
+    
+    var infoPopup: PopupDialog!
+    
+    let refreshControl = UIRefreshControl()
+    
+    lazy var networkErrorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.NavTitle
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = "Unable to contact Gold Price server \nTry again"
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var views: [String: AnyObject] = [:]
-        
-        label.text = "..."
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = NSTextAlignment.center
-        self.view.addSubview(label)
-        views["label"] = label
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[label]-|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[label]", options: [], metrics: nil, views: views))
-        
-        // simple arrays
-        let data: [CGFloat] = [3, 4, -2, 11, 13, 15]
-        let data2: [CGFloat] = [1, 3, 5, 13, 17, 20]
-        
-        // simple line with custom x axis labels
-        let xLabels: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        
-        lineChart = LineChart()
-        lineChart.animation.enabled = true
-        lineChart.area = true
-        lineChart.x.labels.visible = true
-        lineChart.x.grid.count = 5
-        lineChart.y.grid.count = 5
-        lineChart.x.labels.values = xLabels
-        lineChart.y.labels.visible = true
-        lineChart.addLine(data)
-        lineChart.addLine(data2)
-        
-        lineChart.translatesAutoresizingMaskIntoConstraints = false
-        lineChart.delegate = self
-        self.view.addSubview(lineChart)
-        views["chart"] = lineChart
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[chart]-|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label]-[chart(==200)]", options: [], metrics: nil, views: views))
         
         setupScene()
         setupCollectionLayout()
         setupNavigationBarItems()
+        setupLineChart()
+        setupCurrenViewData()
+        setupPopupDialog()
+        setupConnectionError()
+        refreshControl.addTarget(self, action: #selector(HomeDatasourceController.fetchData), for: UIControlEvents.valueChanged)
+        self.collectionView?.insertSubview(refreshControl, at: 0)
         fetchData()
+        
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.width, height: 50)
+    }
+    
+    func onShowInfoPopup(_ button: UIButton){
+        setupPopupDialog()
+    }
+    
+    private func setupCurrenViewData(){
+        currentDate = getCurrentDayFormated()
+        dayLabel.text = currentDate[.Day]
+        weekDayLabel.text = currentDate[.Weekday]
+        monthLabel.text = currentDate[.Month]
+        
+        
     }
 }
 
@@ -117,13 +121,28 @@ extension HomeDatasourceController {
         self.collectionView?.collectionViewLayout = layout
     }
     
-    fileprivate func fetchData(){
-        Service.shareInstance.fetchGoldPrice { (homedataSoure, err) in
+    @objc fileprivate func fetchData(){
+        print("Start")
+        Service.shareInstance.fetchGoldPrice {  [weak self] (homedataSoure, err) in
             if let _ = err {
                 // Handle Network Error
+                
+                self?.networkErrorLabel.isHidden = false
+                self?.datasource = nil
+//                self?.lineChart.clear()
+                self?.refreshControl.endRefreshing()
+                print("Fetch Data error")
                 return;
             }
-            self.datasource = homedataSoure
+            print("Fetch Data Success")
+            self?.networkErrorLabel.isHidden = true
+            self?.datasource = homedataSoure
+            self?.lineChart.clear()
+            self?.goldAmouts = (homedataSoure?.goldPrices.map{ CGFloat($0.amount) })!
+            self?.lineChart.addLine((self?.goldAmouts)!)
+            self?.refreshControl.endRefreshing()
+            
+            
         }
     }
     
@@ -134,8 +153,9 @@ extension HomeDatasourceController {
         self.view.addSubview(monthLabel)
         self.view.addSubview(yearLabel)
         
+        
         if #available(iOS 9.0, *) {
-            self.collectionView?.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor, topConstant: 240, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 0)
+            self.collectionView?.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor, topConstant: 260, leftConstant: 20, bottomConstant: 0, rightConstant: 20, widthConstant: 0, heightConstant: 0)
             self.topContentView.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: self.collectionView?.topAnchor, right: self.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 20, rightConstant: 0, widthConstant: 0, heightConstant: 0)
             self.dayLabel.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: nil, topConstant: 10, leftConstant: 20, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
             self.weekDayLabel.anchor(self.dayLabel.topAnchor, left: self.dayLabel.rightAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 10, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
@@ -143,9 +163,55 @@ extension HomeDatasourceController {
             self.yearLabel.anchor(self.monthLabel.topAnchor, left: self.monthLabel.rightAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
             
         } else {
-            
+            setupConstrainSupportUIS8()
         }
     }
+    
+
+    fileprivate func setupLineChart(){
+        
+        lineChart = LineChart()
+        lineChart.animation.enabled = true
+        lineChart.area = true
+        lineChart.x.labels.visible = true
+        lineChart.x.grid.count = 5
+        lineChart.y.grid.count = 5
+        lineChart.y.labels.visible = true
+        lineChart.addLine(goldAmouts)
+        lineChart.area = false
+        lineChart.x.grid.visible = false
+        lineChart.x.labels.visible = false
+        lineChart.y.grid.visible = false
+        lineChart.y.labels.visible = false
+        
+        lineChart.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(lineChart)
+        if #available(iOS 9.0, *) {
+            lineChart.anchor(self.dayLabel.bottomAnchor, left: self.topContentView.leftAnchor, bottom: self.topContentView.bottomAnchor, right: self.topContentView.rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 0)
+        } else {
+            setupLineChartConstrain()
+        }
+    }
+    fileprivate func setupPopupDialog(){
+        
+        let vc = InfoPopupViewController(nibName: nil, bundle: nil)
+        let popup = PopupDialog(viewController: vc, gestureDismissal: false) {
+            
+        }
+        let cancel = DefaultButton(title: "Close") {
+        }
+        popup.addButton(cancel)
+        present(popup, animated: true, completion: nil)
+    }
+    
+    fileprivate func setupConnectionError(){
+        self.collectionView?.addSubview(networkErrorLabel)
+        networkErrorLabel.isHidden = false
+        networkErrorLabel.anchorCenterXToSuperview()
+        networkErrorLabel.anchorCenterYToSuperview()
+    }
+    
 }
 
 

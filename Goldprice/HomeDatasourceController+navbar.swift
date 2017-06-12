@@ -20,22 +20,33 @@ extension HomeDatasourceController{
         
         if #available(iOS 9.0, *) {
             setupNavbarBottomborder()
-        } else {
-            // Fallback on earlier versions
         }
         setupTitleNavItem()
         setupLeftNavItem()
         
     }
     
-    @available(iOS 9.0, *)
+    
     private func setupNavbarBottomborder(){
         let bottomBorderView  = UIView()
         bottomBorderView.backgroundColor = AppColor.NavBorder
-        //220,242,255
         self.view.addSubview(bottomBorderView)
+        bottomBorderView.translatesAutoresizingMaskIntoConstraints = false
         
-        bottomBorderView.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 2)
+        if #available(iOS 9.0, *) {
+            bottomBorderView.anchor(self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 2)
+        } else {
+            let viewsDict = [ "btview": bottomBorderView]
+            var viewConstraints = [NSLayoutConstraint]()
+            
+            let bottomBorderViewConstraintsHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[btview]-0-|", options: [], metrics: nil, views: viewsDict)
+            viewConstraints += bottomBorderViewConstraintsHorizontal
+            
+            let bottomBorderViewConstraintsVerticle = NSLayoutConstraint.constraints(withVisualFormat: "V:[btview(==2)]-0-|", options: [], metrics: nil, views: viewsDict)
+            viewConstraints += bottomBorderViewConstraintsVerticle
+            
+            NSLayoutConstraint.activate(viewConstraints)
+        }
         
     }
     
@@ -45,10 +56,14 @@ extension HomeDatasourceController{
     }
     
     private func setupLeftNavItem() {
-        let followButton = UIButton(type: .system)
-        followButton.setImage(#imageLiteral(resourceName: "info_icon").withRenderingMode(.alwaysOriginal), for: .normal)
-        followButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: followButton)
+        let infoButton = UIButton(type: .system)
+        infoButton.setImage(#imageLiteral(resourceName: "info_icon").withRenderingMode(.alwaysOriginal), for: .normal)
+        infoButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        infoButton.addTarget(self, action: #selector(HomeDatasourceController.onShowInfoPopup(_:)), for: .touchDown)
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: infoButton)
         
     }
+    
+   
 }

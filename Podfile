@@ -8,5 +8,6 @@ target 'Goldprice' do
   # Pods for Goldprice
   
   pod 'TRON', '~> 2.0.0'
+  pod 'PopupDialog', '~> 0.5'
 
 end

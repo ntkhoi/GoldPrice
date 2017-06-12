@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PopupDialog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>69C47FE02C2527395E612B7C2D1A1EAB</key>
+		<key>1C3144781330575564F0FDEED2A38F23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6208EA724CBABD25AB93E9E42AD2D08D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85378DB8DA93CD8E1B3DF3FB3EACFCDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93E9A75A8E7B5AD6949030A0F5214C05</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B91AACF17CECA7C7CEE1EDF68B9810E4</key>
+		<key>8F7AD11BA988C24A807BB822FC321714</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6208EA724CBABD25AB93E9E42AD2D08D'
-               BlueprintName = 'TRON'
+               BlueprintIdentifier = '85378DB8DA93CD8E1B3DF3FB3EACFCDA'
+               BlueprintName = 'PopupDialog'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'TRON.framework'>
+               BuildableName = 'PopupDialog.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
